@@ -342,6 +342,16 @@ class Yampee_Redis_Client
 		return $this->send('dbsize');
 	}
 
+    /**
+     * Posts a message to the given channel.
+     *
+     * @return mixed
+     */
+    public function publish($channel, $message)
+    {
+        return $this->send('publish', array($channel, $message));
+    }
+
 	/*
 	 * End shortcuts
 	 */
